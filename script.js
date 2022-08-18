@@ -13,3 +13,12 @@ function playRound(playerSelection, computerSelection) {
 
   return res === "w" ? `You win! ${playerSelection} beats ${computerSelection}!` : res === "l" ? `You lose! ${playerSelection} loses to ${computerSelection}!` : `It's a draw! You both chose ${playerSelection}!`;
 }
+
+function game() {
+  for (let i = 0; i <= 5; i++) {
+    let userInput = prompt("Choose your sign! (rock, paper, scissors)");
+    while (!sign.includes(userInput.toLowerCase())) {
+      userInput = prompt("Invalid input! Please choose your sign again! (rock, paper, scissors)");
+    }
+  }
+}
