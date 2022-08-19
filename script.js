@@ -45,6 +45,6 @@ function game() {
     Draws: ${drawCounter}`
   );
   if (winCounter > lossCounter) console.log("YOU WON!");
-  else if (winconter < lossCounter) console.log("YOU LOST!");
+  else if (winCounter < lossCounter) console.log("YOU LOST!");
   else console.log("IT'S A DRAW!");
 }
