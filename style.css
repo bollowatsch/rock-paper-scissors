@@ -1,5 +1,16 @@
 body {
+  height: 100vh;
+  padding: 0;
   font-family: roboto, sasn-serif;
+  background: hsla(332, 53%, 82%, 1);
+
+  background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+
+  background: -moz-linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+
+  background: -webkit-linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#E9B7CE", endColorstr="#D3F3F1", GradientType=1);
 }
 
 h1 {
@@ -28,11 +39,17 @@ p {
 }
 
 button {
-  background-color: beige;
-  border: 2px solid burlywood;
+  color: #422231;
+  background-color: #e9b7ce;
+  border: 2px solid #cf84a7;
   border-radius: 10%;
   width: 10rem;
   height: 10rem;
   font-size: 1.5em;
   font-weight: 700;
+  box-shadow: 1px 1px 1px #cf84a7, -1px 1px 1px #cf84a7;
+}
+
+button:active {
+  background-color: #cf84a7;
 }

@@ -45,10 +45,10 @@ btns.forEach((btn) => btn.addEventListener("click", (e) => {
 }))
 
 function updateGameStats() {
-  if (gameCount == 5) {
-    if (winCounter > lossCounter) console.log("YOU WON!");
-    else if (winCounter < lossCounter) console.log("YOU LOST!");
-    else console.log("IT'S A DRAW!");
+  if (gameCount >= 5) {
+    if (winCounter > lossCounter) gameStats.innerText = "You Won! Congratulations!";
+    else if (winCounter < lossCounter) gameStats.innerText = "You lost! Better luck next time!";
+    else gameStats.innerText = "It's a draw!";
   } else {
     console.log(`Game statistics:\n
     Wins: ${winCounter}\n
