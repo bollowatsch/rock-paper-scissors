@@ -1,17 +1,24 @@
+body {
+  font-family: roboto, sasn-serif;
+}
+
 h1 {
   font-weight: 700;
   text-align: center;
-  font-family: Roboto, sans-serif;
 }
 
 p {
   padding: 10%, 20%;
   font-weight: 400;
   text-align: center;
-  font-family: Roboto, sans-serif;
 }
 
-.container {}
+#gameStats {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+  font-weight: 700;
+}
 
 .btn-container {
   display: flex;

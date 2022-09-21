@@ -2,7 +2,7 @@ const sign = ["rock", "paper", "scissors"];
 let winCounter = 0, lossCounter = 0, drawCounter = 0, gameCount = 0;
 
 const gameStats = document.querySelector("#gameStats");
-gameStats.innerText = `Wins: ${winCounter} - Losses: ${lossCounter} - Draws: Wins: ${drawCounter}`;
+//gameStats.innerText = `Wins: ${winCounter} - Losses: ${lossCounter} - Draws: Wins: ${drawCounter}`;
 
 function getComputerChoice() {
   return sign[Math.floor(Math.random() * 3)];
@@ -54,6 +54,6 @@ function updateGameStats() {
     Wins: ${winCounter}\n
     Losses: ${lossCounter}\n
     Draws: ${drawCounter}`);
-    gameStats.innerText = `Wins: ${winCounter} - Losses: ${lossCounter} - Draws:${drawCounter}`;
+    gameStats.innerText = `Wins: ${winCounter} | Losses: ${lossCounter} | Draws:${drawCounter}`;
   }
 }
