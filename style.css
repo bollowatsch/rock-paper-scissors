@@ -10,3 +10,20 @@ p {
   text-align: center;
   font-family: Roboto, sans-serif;
 }
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+  gap: 2%;
+}
+
+button {
+  background-color: beige;
+  border: 2px solid burlywood;
+  border-radius: 10%;
+  width: 10rem;
+  height: 10rem;
+  font-size: 1.5em;
+  font-weight: 700;
+}
