@@ -1,4 +1,8 @@
 const sign = ["rock", "paper", "scissors"];
+let winCounter = 0, lossCounter = 0, drawCounter = 0, gameCount = 0;
+
+const gameStats = document.querySelector("#gameStats");
+gameStats.innerText = `Wins: ${winCounter} - Losses: ${lossCounter} - Draws: Wins: ${drawCounter}`;
 
 function getComputerChoice() {
   return sign[Math.floor(Math.random() * 3)];
@@ -13,18 +17,24 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === "scissors"
     || playerSelection === "paper" && computerSelection === "rock"
     || playerSelection === "scissors" && computerSelection === "paper") {
-    console.log(`You win! ${playerSelection} beats ${computerSelection}!`);
-    return "w";
+    //console.log(`You win! ${playerSelection} beats ${computerSelection}!`);
+    winCounter++;
+    gameCount++;
+    updateGameStats();
   }
   else if (playerSelection === "rock" && computerSelection === "paper"
     || playerSelection === "paper" && computerSelection === "scissors"
     || playerSelection === "scissors" && computerSelection === "rock") {
-    console.log(`You lose! ${playerSelection} loses to ${computerSelection}!`);
-    return "l";
+    //console.log(`You lose! ${playerSelection} loses to ${computerSelection}!`);
+    lossCounter++;
+    gameCount++;
+    updateGameStats();
   }
   else {
-    console.log(`It's a draw! You both chose ${playerSelection}!`);
-    return "d";
+    drawCounter++;
+    gameCount++;
+    updateGameStats();
+    //console.log(`It's a draw! You both chose ${playerSelection}!`);
   }
 }
 
@@ -34,24 +44,16 @@ btns.forEach((btn) => btn.addEventListener("click", (e) => {
   playRound(e.target.dataset.key.toString(), getComputerChoice());
 }))
 
-//the game function plays 5 rounds and prints the summary of results afterwards
-/*function game() {
-  let winCounter = 0, lossCounter = 0, drawCounter = 0;
-  for (let i = 0; i < 5; i++) {
-    let userInput = prompt("Choose your sign! (rock, paper, scissors)");
-    while (!sign.includes(userInput.toLowerCase())) {
-      userInput = prompt("Invalid input! Please choose your sign again! (rock, paper, scissors)");
-    }
-    let currentRes = playRound(userInput, getComputerChoice());
-    currentRes === "w" ? winCounter++ : currentRes === "l" ? lossCounter++ : drawCounter++;
-  }
-  console.log(`Game statistics:\n
+function updateGameStats() {
+  if (gameCount == 5) {
+    if (winCounter > lossCounter) console.log("YOU WON!");
+    else if (winCounter < lossCounter) console.log("YOU LOST!");
+    else console.log("IT'S A DRAW!");
+  } else {
+    console.log(`Game statistics:\n
     Wins: ${winCounter}\n
     Losses: ${lossCounter}\n
-    Draws: ${drawCounter}`
-  );
-  if (winCounter > lossCounter) console.log("YOU WON!");
-  else if (winCounter < lossCounter) console.log("YOU LOST!");
-  else console.log("IT'S A DRAW!");
+    Draws: ${drawCounter}`);
+    gameStats.innerText = `Wins: ${winCounter} - Losses: ${lossCounter} - Draws:${drawCounter}`;
+  }
 }
-*/
