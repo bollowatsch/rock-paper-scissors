@@ -28,8 +28,14 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+//create eventListeners for all buttons
+const btns = document.querySelectorAll("button");
+btns.forEach((btn) => btn.addEventListener("click", (e) => {
+  playRound(e.target.dataset.key.toString(), getComputerChoice());
+}))
+
 //the game function plays 5 rounds and prints the summary of results afterwards
-function game() {
+/*function game() {
   let winCounter = 0, lossCounter = 0, drawCounter = 0;
   for (let i = 0; i < 5; i++) {
     let userInput = prompt("Choose your sign! (rock, paper, scissors)");
@@ -48,3 +54,4 @@ function game() {
   else if (winCounter < lossCounter) console.log("YOU LOST!");
   else console.log("IT'S A DRAW!");
 }
+*/
