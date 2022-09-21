@@ -11,6 +11,8 @@ p {
   font-family: Roboto, sans-serif;
 }
 
+.container {}
+
 .btn-container {
   display: flex;
   justify-content: center;
